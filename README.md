@@ -1,5 +1,9 @@
 # 7 Days Of Code - By Alura
 
+  - [Day 01](https://github.com/angelozero/7-days-of-code/tree/1DayOfCode) 
+  
+
+
 O projeto é o 7 Days of Code.
 
 O que significa?
@@ -48,3 +52,4 @@ Mas chegou a hora de escrever o código e fazer a coisa funcionar! Vamos lá? Vo
 - Executar a requisição e pegar a resposta (o JSON)
 
 - Imprimir o corpo da resposta no console
+
