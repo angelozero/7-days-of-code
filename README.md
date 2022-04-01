@@ -1,6 +1,7 @@
 # 7 Days Of Code - By Alura
 
   - [Day 01](https://github.com/angelozero/7-days-of-code/tree/1DayOfCode) 
+  - [Day 02](https://github.com/angelozero/7-days-of-code/tree/2DayOfCode)
   
 
 
@@ -53,3 +54,25 @@ Mas chegou a hora de escrever o código e fazer a coisa funcionar! Vamos lá? Vo
 
 - Imprimir o corpo da resposta no console
 
+---
+## Dia 02
+
+A tarfea para o 2 dia é extrair o título do filme e a URL da imagem a partir da resposta JSON.
+
+Existem várias maneiras de fazer isso e, neste momento, não se preocupe ainda em escrever um código elegante. 
+Tente usar os métodos da classe java.lang.String como substring(), split() e replace(). 
+Você também pode usar Regex (através das classes Matcher e Pattern do pacote java.util.regex) para encontrar uma string que siga um determinado padrão.
+
+Com o resultado do parseamento, você deverá criar diferentes listas, cada uma com um atributo do filme. 
+
+Uma lista com os títulos, outra com a URL da imagem e assim por diante. 
+
+Exemplo:
+
+```java
+    List<String> titles = //parseia o título de cada filme do JSON;
+
+    List<String> urlImages = //parseia a URL do pôster de cada filme do JSON;
+
+    // outras listas, com os anos (year) e as notas (imDbRating)
+```
