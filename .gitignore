@@ -184,3 +184,11 @@ nb-configuration.xml
 ## OS X
 ##############################
 .DS_Store
+
+.mvn
+
+HELP.md
+
+mvnw
+
+mvnw.cmd
