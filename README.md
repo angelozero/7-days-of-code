@@ -2,10 +2,6 @@
 
   - [Day 01](https://github.com/angelozero/7-days-of-code/tree/1DayOfCode) 
   - [Day 02](https://github.com/angelozero/7-days-of-code/tree/2DayOfCode)
-  
-
-
-O projeto é o 7 Days of Code.
 
 O que significa?
 
@@ -76,3 +72,9 @@ Exemplo:
 
     // outras listas, com os anos (year) e as notas (imDbRating)
 ```
+
+---
+
+OBS: 
+  - For the following error `java: Internal error in the mapping processor: java.lang.NullPointerException: Cannot invoke "java.net.URL.toExternalForm()"`
+    - Fix with : `File | Settings | Build, Execution, Deployment | Compiler | user-local build process vm options` and set `-Djps.track.ap.dependencies=false`
