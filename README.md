@@ -76,5 +76,17 @@ Exemplo:
 ---
 
 OBS: 
-  - For the following error `java: Internal error in the mapping processor: java.lang.NullPointerException: Cannot invoke "java.net.URL.toExternalForm()"`
-    - Fix with : `File | Settings | Build, Execution, Deployment | Compiler | user-local build process vm options` and set `-Djps.track.ap.dependencies=false`
+  - For the following error 
+```
+java: Internal error in the mapping processor: 
+java.lang.NullPointerException: 
+Cannot invoke "java.net.URL.toExternalForm()"
+```
+  - In IntelliJ to Fix go to: 
+```
+File | Settings | Build, Execution, Deployment | Compiler | user-local build process vm options
+``` 
+ and set 
+```
+-Djps.track.ap.dependencies=false
+```
