@@ -1,7 +1,7 @@
 # 7 Days Of Code - By Alura
 
-  - [Day 01](https://github.com/angelozero/7-days-of-code/tree/1DayOfCode) 
-  - [Day 02](https://github.com/angelozero/7-days-of-code/tree/2DayOfCode)
+  - [Day 01](https://github.com/angelozero/7-days-of-code/blob/main/01-DAY.md) 
+  - [Day 02](https://github.com/angelozero/7-days-of-code/blob/main/02-DAY.md)
 
 O que significa?
 
