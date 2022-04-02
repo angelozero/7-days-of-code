@@ -72,25 +72,6 @@ Exemplo:
 
     // outras listas, com os anos (year) e as notas (imDbRating)
 ```
-
----
-
-OBS: 
-  - For the following error 
-```
-java: Internal error in the mapping processor: 
-java.lang.NullPointerException: 
-Cannot invoke "java.net.URL.toExternalForm()"
-```
-  - To fix this in IntelliJ go to: 
-```
-File | Settings | Build, Execution, Deployment | Compiler | user-local build process vm options
-``` 
- and set 
-```
--Djps.track.ap.dependencies=false
-```
-
 --- 
 ## Dia 03
 No desafio de hoje, a ideia será modelar, ou pelo menos iniciar uma modelagem melhor do seu código.
@@ -116,3 +97,25 @@ Bora implementar essa classe?
 
 ---
 ## Dia 04
+
+---
+
+===================================================
+=============== FIX SOME ERRORS ===================
+===================================================
+
+OBS: 
+  - For the following error 
+```
+java: Internal error in the mapping processor: 
+java.lang.NullPointerException: 
+Cannot invoke "java.net.URL.toExternalForm()"
+```
+  - To fix this in IntelliJ go to: 
+```
+File | Settings | Build, Execution, Deployment | Compiler | user-local build process vm options
+``` 
+ and set 
+```
+-Djps.track.ap.dependencies=false
+```
