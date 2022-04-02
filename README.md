@@ -90,3 +90,29 @@ File | Settings | Build, Execution, Deployment | Compiler | user-local build pro
 ```
 -Djps.track.ap.dependencies=false
 ```
+
+--- 
+## Dia 03
+No desafio de hoje, a ideia será modelar, ou pelo menos iniciar uma modelagem melhor do seu código.
+
+Pensando um pouco sobre Orientação a Objetos, uma pergunta simples pode ajudar: 
+no caso do seu projeto, o título e o pôster se referem a que tipo de objeto? 
+A um filme, claro. Mas você ainda não tem nenhuma estrutura que defina o que é um filme.
+
+Qual vai ser a cara disso? Um filme (Movie) deve ter os seguintes atributos:
+
+```json
+título (title)
+URL da imagem do pôster (urlImage)
+nota (rating)
+ano (year)
+```
+
+Em outras palavras, em vez de ter várias listas diferentes, uma para cada atributo do filme, 
+é bem melhor organizar isso em uma única `List<Movie>`, onde cada filme encapsula os seus próprios dados. 
+Bora implementar essa classe?
+
+*Obs.: Para o terceiro dia implementei testes unitários, pois o 1 dia ja contemplava o que o desafio pedia*
+
+---
+## Dia 04
