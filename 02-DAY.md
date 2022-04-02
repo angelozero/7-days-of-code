@@ -60,7 +60,6 @@ public Map<String, List<String>> execute() {
 
 ## Response
 ```json
-[
 {
     "imDbRatingCount": [
         "2567646",
