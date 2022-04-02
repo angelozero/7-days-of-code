@@ -192,3 +192,5 @@ HELP.md
 mvnw
 
 mvnw.cmd
+
+application-local.properties
