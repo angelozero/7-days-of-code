@@ -24,16 +24,19 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class ImdbController {
 
+    public static final String CACHE_CLEAR = "Cache clear";
+
     private final GetTop250Movies getTop250Movies;
     private final GetListOfListsFromTop250Movies getListOfListsFromTop250Movies;
     private final ImdbRestMapper imdbRestMapper;
     private final CacheManager cacheManager;
 
     @GetMapping("/clear")
-    public void clearCache() {
+    public ResponseEntity<String> clearCache() {
         for (String name : cacheManager.getCacheNames()) {
             Objects.requireNonNull(cacheManager.getCache(name)).clear();
         }
+        return new ResponseEntity<>(CACHE_CLEAR, HttpStatus.OK);
     }
 
     @GetMapping("/top250movies")
