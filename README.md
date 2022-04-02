@@ -82,7 +82,7 @@ java: Internal error in the mapping processor:
 java.lang.NullPointerException: 
 Cannot invoke "java.net.URL.toExternalForm()"
 ```
-  - To fix this in IntelliJ, go to: 
+  - To fix this in IntelliJ go to: 
 ```
 File | Settings | Build, Execution, Deployment | Compiler | user-local build process vm options
 ``` 
