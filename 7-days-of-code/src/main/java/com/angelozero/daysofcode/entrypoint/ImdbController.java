@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class ImdbController {
 
-    public static final String CACHE_CLEAR = "Cache clear";
+    private static final String CACHE_CLEAR = "Cache clear";
 
     private final GetTop250Movies getTop250Movies;
     private final GetListOfListsFromTop250Movies getListOfListsFromTop250Movies;
