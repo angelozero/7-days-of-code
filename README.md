@@ -3,6 +3,7 @@
   - [Day 01](https://github.com/angelozero/7-days-of-code/blob/main/01-DAY.md) 
   - [Day 02](https://github.com/angelozero/7-days-of-code/blob/main/02-DAY.md)
   - [Day 03](https://github.com/angelozero/7-days-of-code/blob/main/03-DAY.md)
+  - [Day 04](https://github.com/angelozero/7-days-of-code/blob/main/04-DAY.md)
 
 O que significa?
 
@@ -98,9 +99,21 @@ Bora implementar essa classe?
 
 ---
 ## Dia 04
+No desafio de hoje, você vai trabalhar com a saída e gerar uma página HTML a partir da lista de objetos que você já tem no seu código Java. 
+
+A ideia será criar uma página HTML onde você possa ver as informações sobre o filme, incluindo o pôster. 
+
+Para tal, vou dar um pequeno passo-a-passo para te auxiliar:
+ - Crie uma nova classe HTMLGenerator, que irá receber no construtor um Writer (por exemplo, PrintWriter) 
+ - Adicione um método chamado `generate`, que irá receber uma `List<Movie>`. 
+ - Nesse método, gere todo o HTML a partir da lista, usando as informações do objeto. 
+ - 
+Você pode usar métodos privados para delegar responsabilidades.
 
 ---
-
+## Dia 05
+---
+  
 -------------------------
 ---- FIX SOME ERRORS ----
 -------------------------
