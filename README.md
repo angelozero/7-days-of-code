@@ -4,6 +4,7 @@
   - [Day 02](https://github.com/angelozero/7-days-of-code/blob/main/02-DAY.md)
   - [Day 03](https://github.com/angelozero/7-days-of-code/blob/main/03-DAY.md)
   - [Day 04](https://github.com/angelozero/7-days-of-code/blob/main/04-DAY.md)
+  - [Day 05](https://github.com/angelozero/7-days-of-code/blob/main/05-DAY.md)
 
 O que significa?
 
