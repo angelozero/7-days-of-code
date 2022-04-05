@@ -112,7 +112,21 @@ Você pode usar métodos privados para delegar responsabilidades.
 
 ---
 ## Dia 05
+A sua primeira tarefa neste desafio será encapsular a chamada da API dentro de uma nova classe. Você pode chamar essa classe de ImdbApiClient.
+
+Além disso, uma segunda tarefa: o código que faz o parseamento do JSON ainda está "solto"! Para melhorar o encapsulamento e separar todas as responsabilidades em suas devidas classes, crie uma nova classe para fazer o parseamento do JSON, algo como:
+
+```json
+String json = //chamada da API
+
+List<Movie> movies = new ImdbMovieJsonParser(json).parse()
+   
+//gerando HTML
+//…
+```
 ---
+## Dia 06
+
   
 -------------------------
 ---- FIX SOME ERRORS ----
