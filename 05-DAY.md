@@ -69,7 +69,8 @@ function load() {
     return element.options[element.selectedIndex].text;
   }
 ```
-
+---
+- The pagination
 ![movie_image](https://i.postimg.cc/NFfHDR9m/Whats-App-Image-2022-04-04-at-10-48-41-PM.jpg)
 
 
