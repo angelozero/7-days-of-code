@@ -1,10 +1,10 @@
 package com.angelozero.daysofcode.entrypoint;
 
 import com.angelozero.daysofcode.entrypoint.mapper.ImdbRestMapper;
-import com.angelozero.daysofcode.entrypoint.rest.ImdbResponse;
+import com.angelozero.daysofcode.entrypoint.rest.MovieResponse;
 import com.angelozero.daysofcode.usecase.GetListOfListsFromTop250Movies;
 import com.angelozero.daysofcode.usecase.GetTop250Movies;
-import com.angelozero.daysofcode.usecase.domain.ImdbDomain;
+import com.angelozero.daysofcode.usecase.domain.MovieDomain;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -66,10 +66,10 @@ class ImdbControllerTest {
     @DisplayName("Should get the 250 top movies with success")
     void shouldGetTop250Movies() {
 
-        when(getTop250Movies.execute()).thenReturn(List.of(ImdbDomain.builder().title(MOVIE_TEST).build()));
-        when(imdbRestMapper.toResponse(any(ImdbDomain.class))).thenReturn(ImdbResponse.builder().title(MOVIE_TEST).build());
+        when(getTop250Movies.execute()).thenReturn(List.of(MovieDomain.builder().title(MOVIE_TEST).build()));
+        when(imdbRestMapper.toResponse(any(MovieDomain.class))).thenReturn(MovieResponse.builder().title(MOVIE_TEST).build());
 
-        ResponseEntity<List<ImdbResponse>> value = controller.getTop250Movies();
+        ResponseEntity<List<MovieResponse>> value = controller.getTop250Movies();
 
         assertEquals(HttpStatus.OK, value.getStatusCode());
         assertNotNull(value.getBody());

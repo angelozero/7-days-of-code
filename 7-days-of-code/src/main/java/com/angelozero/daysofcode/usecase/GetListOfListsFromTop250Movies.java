@@ -1,13 +1,11 @@
 package com.angelozero.daysofcode.usecase;
 
-import com.angelozero.daysofcode.usecase.domain.ImdbDomain;
+import com.angelozero.daysofcode.usecase.domain.MovieDomain;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Field;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -24,17 +22,17 @@ public class GetListOfListsFromTop250Movies {
         try {
             log.info("\n[INFO] - Getting a list of lists of the 250 top movies\n");
 
-            List<ImdbDomain> moviesList = getTop250Movies.execute();
+            List<MovieDomain> moviesList = getTop250Movies.execute();
 
-            List<String> id = moviesList.stream().map(ImdbDomain::getId).collect(Collectors.toList());
-            List<String> rank = moviesList.stream().map(ImdbDomain::getRank).collect(Collectors.toList());
-            List<String> title = moviesList.stream().map(ImdbDomain::getTitle).collect(Collectors.toList());
-            List<String> fullTitle = moviesList.stream().map(ImdbDomain::getFullTitle).collect(Collectors.toList());
-            List<String> year = moviesList.stream().map(ImdbDomain::getYear).collect(Collectors.toList());
-            List<String> image = moviesList.stream().map(ImdbDomain::getImage).collect(Collectors.toList());
-            List<String> crew = moviesList.stream().map(ImdbDomain::getCrew).collect(Collectors.toList());
-            List<String> imDbRating = moviesList.stream().map(ImdbDomain::getImDbRating).collect(Collectors.toList());
-            List<String> imDbRatingCount = moviesList.stream().map(ImdbDomain::getImDbRatingCount).collect(Collectors.toList());
+            List<String> id = moviesList.stream().map(MovieDomain::getId).collect(Collectors.toList());
+            List<String> rank = moviesList.stream().map(MovieDomain::getRank).collect(Collectors.toList());
+            List<String> title = moviesList.stream().map(MovieDomain::getTitle).collect(Collectors.toList());
+            List<String> fullTitle = moviesList.stream().map(MovieDomain::getFullTitle).collect(Collectors.toList());
+            List<String> year = moviesList.stream().map(MovieDomain::getYear).collect(Collectors.toList());
+            List<String> image = moviesList.stream().map(MovieDomain::getImage).collect(Collectors.toList());
+            List<String> crew = moviesList.stream().map(MovieDomain::getCrew).collect(Collectors.toList());
+            List<String> imDbRating = moviesList.stream().map(MovieDomain::getImDbRating).collect(Collectors.toList());
+            List<String> imDbRatingCount = moviesList.stream().map(MovieDomain::getImDbRatingCount).collect(Collectors.toList());
 
             return Map.of(
                     "id", id,
