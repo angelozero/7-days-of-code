@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+# 05 Day
+  - Creating the pagination method 
+  - I'm not really proud about the solution but in my defense I can say... *I don't fully understand how the frontend works and I don't like to code in JS to! So I gave my best and it's working! :)*
 
-<head>
-  <title>Movie List</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</head>
-<script>
-  function load() {
+```javascript
+function load() {
 
     var apiUrl = 'http://localhost:8080/api/top250movies';
     var data = fetch(apiUrl).then(response => {
@@ -79,38 +68,9 @@
     var element = document.getElementById("selectDropList");
     return element.options[element.selectedIndex].text;
   }
+```
 
-</script>
+(!movie_image)[https://i.postimg.cc/NFfHDR9m/Whats-App-Image-2022-04-04-at-10-48-41-PM.jpg]
 
-<body onload="load()">
-  <div class="px-5 py-4 my-6">
-    <table class="table" id="movieList">
-      <thead class="thead-dark">
-        <tr>
-          <th>Movie</th>
-          <th>Year</th>
-          <th>Crew</th>
-          <th>Poster</th>
-        </tr>
-      </thead>
 
-      <tbody>
 
-      </tbody>
-
-    </table>
-    <div class="container">
-      <div class="row">
-        <div class="row">
-          <div class="col text-center">
-            <select class="custom-select custom-select-lg mb-3" id="selectDropList" onchange="load()">
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</body>
-
-</html>
