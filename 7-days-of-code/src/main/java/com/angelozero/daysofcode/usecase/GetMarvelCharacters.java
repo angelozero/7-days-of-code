@@ -7,6 +7,7 @@ import com.angelozero.daysofcode.usecase.domain.MarvelCharacterDomain;
 import com.angelozero.daysofcode.usecase.mapper.MarvelUseCaseMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.client.RestClientException;
@@ -49,7 +50,7 @@ public class GetMarvelCharacters {
             return marvelCharactersList;
 
         } catch (Exception ex) {
-            log.error("\n[ERROR] - IMDB API CLIENT: " + ex.getMessage() + "\n");
+            log.error("\n[ERROR] - MARVEL API CLIENT: " + ex.getMessage() + "\n");
             throw new RestClientException("[ERROR] - IMDB API CLIENT: " + ex.getMessage());
         }
     }

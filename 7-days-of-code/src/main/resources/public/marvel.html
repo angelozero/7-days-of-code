@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Marvel Characters List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<script>
+
+  function load() {
+    var characterName = document.getElementById('nameField').value
+    var apiUrl = 'http://localhost:8080/marvel/characters?name=' + characterName;
+    var data = fetch(apiUrl).then(response => {
+      return response.json();
+    }).then(data => {
+
+      // Cleaning the character list
+      document.getElementById('characterList').getElementsByTagName('tbody')[0].innerHTML = '';
+
+      data.forEach(function (character) {
+        var table = document.getElementById("characterList").getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow(table.length);
+
+        cell0 = newRow.insertCell(0);
+        cell0.innerHTML = character.name;
+
+        cell1 = newRow.insertCell(1);
+        cell1.innerHTML = character.description;
+
+        cell3 = newRow.insertCell(2);
+        cell3.innerHTML = '<img src="' + character.image + '" class="img-thumbnail" width="104" height="36">';
+      });
+
+
+    }).catch(err => {
+      console.log('Erro', err);
+    });
+  }
+
+  document.addEventListener('keypress', function (e) {
+    if (e.keyCode === 13 || e.which === 13) {
+      e.preventDefault();
+      load();
+    }
+  });
+
+</script>
+
+<body>
+  <div class="px-5 py-4 my-6">
+    <div class="container">
+      <div class="row">
+        <div class="row">
+          <!-- <div class="col text-center">
+          <select class="custom-select custom-select-lg mb-3" id="selectDropList" onchange="load()">
+          </select>
+        </div> -->
+          <div class="container">
+            <div class="input-group">
+              <input type="text" id="nameField" class="form-control" placeholder="Hero's name here...">
+              <div class="input-group-append">
+                <button class="btn btn-secondary" id="searchCharacterBtn" value="Submit" type="button" onclick="load()">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="px-5 py-4 my-6">
+    <table class="table" id="characterList">
+      <thead class="thead-dark">
+        <tr>
+          <th>Character</th>
+          <th>Description</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

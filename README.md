@@ -5,6 +5,7 @@
   - [Day 03](https://github.com/angelozero/7-days-of-code/blob/main/03-DAY.md)
   - [Day 04](https://github.com/angelozero/7-days-of-code/blob/main/04-DAY.md)
   - [Day 05](https://github.com/angelozero/7-days-of-code/blob/main/05-DAY.md)
+  - [Day 06](https://github.com/angelozero/7-days-of-code/blob/main/06-DAY.md)
 
 O que significa?
 
@@ -127,7 +128,45 @@ List<Movie> movies = new ImdbMovieJsonParser(json).parse()
 ```
 ---
 ## Dia 06
+Você deverá deixar o seu código mais genérico, ou seja, preparado para receber dados de outras APIs. Para isso, entram em cena as interfaces, que permitem implementações diferentes.
 
+Então, vamos lá: o seu modelo deverá implementar uma nova interface que irá definir o comportamento comum de um conteúdo. Você pode chamá-la de Content, e ela poderá ter os seguintes métodos:
+
+```java
+public interface Content {
+    String title();
+    String urlImage();
+    String rating();
+    String year();
+}
+```
+
+E a sua classe (ou record) Movie se tornará um Content, dessa forma:
+
+`public class Movie implements Content {...}`
+
+Sendo assim, você também poderá pensar em uma abstração para o parser de JSON. Você pode criar uma interface chamada 'JsonParser':
+
+```java
+public interface JsonParser{
+    public List<? extends Content> parse();
+}
+```
+
+Repare que o método devolve uma lista que possui elementos do tipo <? extends Content>. Como o Movie implementa a interface Content, esse código vai funcionar!
+
+A partir daí, você poderá usar a nova interface JsonParser na classe ImdbMovieJsonParser:
+
+```java
+public class ImdbMovieJsonParser implements JsonParser{
+    //…
+}
+```
+
+Resumindo, você criará duas abstrações: uma para o seu modelo chamado de Content e outra para o JsonParser. Basta que futuras implementações sigam essas interfaces e o seu gerador de HTML continuará funcionando! Ou seja, você desacoplou o parseamento do JSON da geração de HTML.
+
+---
+## Dia 07
   
 -------------------------
 ---- FIX SOME ERRORS ----
