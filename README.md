@@ -6,6 +6,7 @@
   - [Day 04](https://github.com/angelozero/7-days-of-code/blob/main/04-DAY.md)
   - [Day 05](https://github.com/angelozero/7-days-of-code/blob/main/05-DAY.md)
   - [Day 06](https://github.com/angelozero/7-days-of-code/blob/main/06-DAY.md)
+  - [Day 07](https://github.com/angelozero/7-days-of-code/blob/main/07-DAY.md)
 
 O que significa?
 
@@ -167,6 +168,28 @@ Resumindo, você criará duas abstrações: uma para o seu modelo chamado de Con
 
 ---
 ## Dia 07
+No mundo Java, é possível ordenar uma coleção usando o método sort() da classe Collections, cuja base é algo como:
+
+Collections.sort(contentList); //mas qual é o critério de ordenação?
+
+Esse método sabe ordenar listas, desde que você defina uma regra - é aí que vai entrar o seu modelo. A partir dele, você poderá definir essa regra, que também é chamada de "ordem natural". Ou seja, para ter essa regra no modelo, você deverá implementar um método bem definido pela interface Comparable. Dessa forma, os objetos da classe se tornarão comparáveis.
+
+Bora lá então? Vou te dar novamente um pequeno passo-a-passo para ajudar:
+
+Implemente a interface Comparable<? extends Content> na classe (ou record) Movie (e também na classe Series, se você a tiver criado).
+Para começar, você pode implementar o método usando a nota (rating) como parâmetro de comparação. Por exemplo:
+
+public int compareTo(Content outro) {
+    return this.rating().compareTo(outro.rating());
+}
+
+No método main, para ordenar a lista e gerar o HTML, use:
+
+Collections.sort(contentList);
+
+O método sort() está sobrecarregado, então você pode passar um Comparator como segundo parâmetro para inverter a lista:
+
+Collections.sort(contentList, Comparator.reverseOrder());
   
 -------------------------
 ---- FIX SOME ERRORS ----
