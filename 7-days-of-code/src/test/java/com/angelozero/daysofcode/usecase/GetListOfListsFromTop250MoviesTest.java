@@ -1,6 +1,6 @@
 package com.angelozero.daysofcode.usecase;
 
-import com.angelozero.daysofcode.usecase.domain.ImdbDomain;
+import com.angelozero.daysofcode.usecase.domain.MovieDomain;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -30,7 +30,7 @@ class GetListOfListsFromTop250MoviesTest {
     @DisplayName("Should get the top 250 movies in a list of lists with success")
     void shouldGetTheTop250MoviesInAListOfListsWithSuccess() {
 
-        when(getTop250Movies.execute()).thenReturn(List.of(ImdbDomain.builder()
+        when(getTop250Movies.execute()).thenReturn(List.of(MovieDomain.builder()
                 .title(UUID.randomUUID().toString())
                 .crew(UUID.randomUUID().toString())
                 .fullTitle(UUID.randomUUID().toString())

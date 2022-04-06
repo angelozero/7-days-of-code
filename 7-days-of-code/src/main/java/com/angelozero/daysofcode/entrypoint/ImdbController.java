@@ -1,7 +1,8 @@
 package com.angelozero.daysofcode.entrypoint;
 
 import com.angelozero.daysofcode.entrypoint.mapper.ImdbRestMapper;
-import com.angelozero.daysofcode.entrypoint.rest.ImdbResponse;
+import com.angelozero.daysofcode.entrypoint.rest.MovieResponse;
+import com.angelozero.daysofcode.usecase.GetMarvelCharacters;
 import com.angelozero.daysofcode.usecase.GetListOfListsFromTop250Movies;
 import com.angelozero.daysofcode.usecase.GetTop250Movies;
 import lombok.AllArgsConstructor;
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/imdb")
 @AllArgsConstructor
 public class ImdbController {
 
@@ -40,8 +41,8 @@ public class ImdbController {
     }
 
     @GetMapping("/top250movies")
-    public ResponseEntity<List<ImdbResponse>> getTop250Movies() {
-        List<ImdbResponse> top250MoviesList = getTop250Movies.execute().stream().map(imdbRestMapper::toResponse).collect(Collectors.toList());
+    public ResponseEntity<List<MovieResponse>> getTop250Movies() {
+        List<MovieResponse> top250MoviesList = getTop250Movies.execute().stream().map(imdbRestMapper::toResponse).collect(Collectors.toList());
         return new ResponseEntity<>(top250MoviesList, HttpStatus.OK);
     }
 

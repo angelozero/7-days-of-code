@@ -1,5 +1,6 @@
 package com.angelozero.daysofcode.gateway.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,7 +12,8 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ImdbListEntity {
+public class MoviesListEntity {
 
-    private List<ImdbEntity> items;
+    @JsonProperty("items")
+    private List<MovieEntity> moviesList;
 }

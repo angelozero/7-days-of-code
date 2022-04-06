@@ -2,9 +2,9 @@ package com.angelozero.daysofcode.usecase;
 
 import com.angelozero.daysofcode.config.ImdbProperties;
 import com.angelozero.daysofcode.gateway.ImdbApiClient;
-import com.angelozero.daysofcode.gateway.entity.ImdbEntity;
-import com.angelozero.daysofcode.gateway.entity.ImdbListEntity;
-import com.angelozero.daysofcode.usecase.domain.ImdbDomain;
+import com.angelozero.daysofcode.gateway.entity.MovieEntity;
+import com.angelozero.daysofcode.gateway.entity.MoviesListEntity;
+import com.angelozero.daysofcode.usecase.domain.MovieDomain;
 import com.angelozero.daysofcode.usecase.mapper.ImdbUseCaseMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -44,17 +44,17 @@ class GetTop250MoviesTest {
     @DisplayName("Should get the top 250 movies with success")
     void shouldGetTop250MoviesWithSuccess() {
 
-        ImdbEntity imdbEntity = ImdbEntity.builder().title(TITLE_MOVIE_TEST).build();
-        ImdbDomain imdbDomain = ImdbDomain.builder().title(TITLE_MOVIE_TEST).build();
+        MovieEntity movieEntity = MovieEntity.builder().title(TITLE_MOVIE_TEST).build();
+        MovieDomain movieDomain = MovieDomain.builder().title(TITLE_MOVIE_TEST).build();
 
         when(imdbApiClient.getTop250Movies(anyString()))
-                .thenReturn(ImdbListEntity.builder()
-                        .items(List.of(imdbEntity))
+                .thenReturn(MoviesListEntity.builder()
+                        .moviesList(List.of(movieEntity))
                         .build());
         when(imdbProperties.getApiKey()).thenReturn(API_KEY);
-        when(imdbUseCaseMapper.toDomain(any(ImdbEntity.class))).thenReturn(imdbDomain);
+        when(imdbUseCaseMapper.toDomain(any(MovieEntity.class))).thenReturn(movieDomain);
 
-        List<ImdbDomain> value = getTop250Movies.execute();
+        List<MovieDomain> value = getTop250Movies.execute();
 
         assertNotNull(value);
         assertFalse(value.isEmpty());
